@@ -1,4 +1,28 @@
 def string_to_numpy_array(string: str):
+    """Converts a string to a numpy array. Useful for when numpy outputs arrays to the terminal during
+    testing that you want to then input again into a script. Only handles 2d arrays.
+
+    Example:
+    input:
+    "
+    [[1 2 3e-1]
+    [4 5 6][7 8e-2 9]]
+    "
+    output:
+    numpy array object that is equal to the output of this:
+    np.array([1, 2, 3e-1], [4, 5, 6], [7, 8e-2, 9]])
+
+    
+    Parameters
+    ----------
+    string: str
+        string of a 2d numpy array that is to be converted into a numpy array.
+        
+    Returns
+    -------
+    np.ndarray
+        the string turned into a numpy array
+    """
     # Remove new lines
     string = string.replace("\n", "")
     string = string[1:-1]
